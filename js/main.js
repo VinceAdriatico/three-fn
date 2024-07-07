@@ -44,7 +44,7 @@ function init() {
         .setTranscoderPath( 'jsm/libs/basis/' )
         .detectSupport( renderer );
 
-    const loader = new GLTFLoader().setPath( '/gltf/' );
+    const loader = new GLTFLoader();
     loader.setKTX2Loader( ktx2Loader );
     loader.setMeshoptDecoder( MeshoptDecoder );
     loader.load( 'aquarium.glb', function ( gltf ) {
