@@ -45,10 +45,12 @@ function init() {
         .detectSupport( renderer );
 
     // Set to dist folder on production 
-    const loader = new GLTFLoader().setPath( '/dist/gltf/' );
+    const loader = new GLTFLoader();
     loader.setKTX2Loader( ktx2Loader );
     loader.setMeshoptDecoder( MeshoptDecoder );
-    loader.load( 'aquarium.glb', function ( gltf ) {
+
+    // import glb file from public directory
+    loader.load( '/gltf/aquarium.glb?url', function ( gltf ) {
 
         // coffeemat.glb was produced from the source scene using gltfpack:
         // gltfpack -i coffeemat/scene.gltf -o coffeemat.glb -cc -tc
